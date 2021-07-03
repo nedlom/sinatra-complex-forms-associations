@@ -1,2 +1,20 @@
 <h1>Create a new Pet</h1>
 
+<form method="post" action="/pets">
+    <label>Name: </label>
+    <br>
+    <input type="text" name="pet_name">
+    <br><br>
+
+    <% @owners.each do |o| %>
+        <input type="radio" id="<%= o.id %>" name="owner_id" value="<%= o.id %>"><%= o.name %><br>
+        <% end %>
+    <br>
+
+    <h2>Create A New Owner</h2>
+    <input type="text" name="owner_name">
+    <br>
+    <br>
+
+    <input type="submit" value="Create Pet">
+</form>
